@@ -3,7 +3,7 @@ RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
 RUN apt-get install maven -y
 COPY . .
-RUN mvn -e package
+RUN mvn -X package
 COPY target/*.jar /app.jar
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 
