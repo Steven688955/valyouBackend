@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/investor")
 public class InvestorController {
 
-    // @GetMapping("/create")
-    // ResponseEntity<?> createBusinessAccount() {
-    //     return new ResponseEntity<>(new ResponseMessage("success", "everything coming soon"), HttpStatus.BAD_REQUEST);
-    // }
+    @GetMapping("/create")
+    ResponseEntity<?> createBusinessAccount() {
+        return new ResponseEntity<>(new ResponseMessage("success", "everything coming soon"), HttpStatus.BAD_REQUEST);
+    }
 }
 
 @Setter
