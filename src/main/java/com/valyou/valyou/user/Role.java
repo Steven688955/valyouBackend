@@ -1,4 +1,4 @@
-package com.valyou.valyou.models;
+package com.valyou.valyou.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

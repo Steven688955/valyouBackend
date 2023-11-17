@@ -11,7 +11,9 @@ public class CustomUserDetails extends org.springframework.security.core.userdet
                              boolean accountNonExpired, boolean credentialsNonExpired,
                              Collection<? extends GrantedAuthority> authorities) {
         super(username, password, enabled, accountNonExpired, credentialsNonExpired, true, authorities);
+
         this.userId = userId;
+
     }
 
     public Long getUserId() {

@@ -1,6 +1,6 @@
-package com.valyou.valyou.repositories;
+package com.valyou.valyou.user;
 
-import com.valyou.valyou.models.Users;
+import com.valyou.valyou.user.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<Users,Long> {

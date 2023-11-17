@@ -1,4 +1,4 @@
-package com.valyou.valyou.models;
+package com.valyou.valyou.user;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,5 +26,16 @@ public class Address {
     private String woreda;
 
     private String houseNumber;
-
+    public Address(String phoneNumber, String email, String nationality, String city, String subCity, String woreda, String houseNumber){
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.nationality =nationality;
+        this.city = city;
+        this.subCity= subCity;
+        this.woreda= woreda;
+        this.houseNumber=houseNumber;
+    }
+    public Address(String phoneNumber, String email, String city, String subCity, String woreda, String houseNumber) {
+        this(phoneNumber,email, "Ethiopia", city, subCity, woreda, houseNumber );
+    }
 }

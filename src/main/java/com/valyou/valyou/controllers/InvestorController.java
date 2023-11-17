@@ -1,5 +1,6 @@
 package com.valyou.valyou.controllers;
 
+import com.valyou.valyou.DTO.ResponseMessage;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,16 +13,9 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/investor")
 public class InvestorController {
 
-    @GetMapping("/create")
-    ResponseEntity<?> createBusinessAccount() {
-        return new ResponseEntity<>(new ResponseMessage("success", "everything coming soon"), HttpStatus.BAD_REQUEST);
-    }
+     @GetMapping("/create")
+     ResponseEntity<?> createBusinessAccount() {
+         return new ResponseEntity<>(new ResponseMessage("success", "everything coming soon"), HttpStatus.OK);
+     }
 }
 
-@Setter
-@Getter
-@AllArgsConstructor
-class ResponseMessage {
-    private String status;
-    private String message;
-}
