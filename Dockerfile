@@ -1,14 +1,23 @@
-
-FROM maven:3.8.4-openjdk-17 AS build
-WORKDIR /app
+FROM maven:3.8.5-openjdk-17 AS build
 COPY . .
-RUN mvn clean install
+RUN mvn clean package -DskipTests
 
-FROM openjdk:17-jdk AS runtime
-WORKDIR /app
-COPY --from=build /app/target/your-spring-boot-app.jar /app/app.jar
-EXPOSE 8080
-CMD ["java", "-jar", "app.jar"]
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/*.jar storeManagement.jar
+EXPOSE 9191
+ENTRYPOINT ["java","-jar","storeManagement.jar"]
+
+
+# FROM maven:3.8.4-openjdk-17 AS build
+# WORKDIR /app
+# COPY . .
+# RUN mvn clean install
+
+# FROM openjdk:17-jdk AS runtime
+# WORKDIR /app
+# COPY --from=build /app/target/your-spring-boot-app.jar /app/app.jar
+# EXPOSE 8080
+# CMD ["java", "-jar", "app.jar"]
 
 
 # FROM ubuntu:latest AS build
